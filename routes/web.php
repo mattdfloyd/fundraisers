@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/fundraisers');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('fundraisers', 'FundraiserController')->only(['index', 'create', 'store', 'show']);
+Route::post('fundraisers/{fundraiser}/reviews', 'FundraiserReviewsController@store')->name('fundraisers.reviews.store');

@@ -1,5 +1,9 @@
 <?php
 
+if (class_exists('\ItsDamien\Heroku\Config\Parse')) {
+    new \ItsDamien\Heroku\Config\Parse();
+}
+
 return [
 
     /*
